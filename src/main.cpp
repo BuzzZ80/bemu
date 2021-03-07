@@ -84,7 +84,11 @@ int main(int argc, char *argv[]) {
 	myCpu.reset(); //resets the CPU
 	
 	while (!myCpu.H) { //execute instructions while the CPU isn't halted
-		if ((ram[0xFFF] == 1) && intOut) std::cout << std::oct << ram[0xFFE] << std::endl;
+		if ((ram[04010] == 1) && intOut) std::cout << 
+			uint32_t(ram[04005] << 12) +
+			uint32_t(ram[04004])<<
+			std::endl;
+
 		if (showRegs) printStatus(myCpu, ram);
 		else if (showA) std::cout << std::oct << myCpu.Ac << std::endl;
 		myCpu.execute(ram); //executes the next instruction

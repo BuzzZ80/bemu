@@ -159,6 +159,7 @@ void cpuCore::msc(byte mOp1, byte mOp2, byte mRs1, word mem[4096]){
             C = (Op & 0x1000) == 0x1000;
             Op = Op & 0xFFF;
             Z = Op == 0;
+            if ((mRs1 > 3) && (mRs1 < 7)) Pc = (Pc - 1) & 0xFFF;
             rsLoad(mRs1, Op, mem);
             break;
         case 5:
@@ -166,6 +167,7 @@ void cpuCore::msc(byte mOp1, byte mOp2, byte mRs1, word mem[4096]){
             C = (Op & 0x1000) == 0x1000;
             Op = Op & 0xFFF;
             Z = Op == 0;
+            if ((mRs1 > 3) && (mRs1 < 7)) Pc = (Pc - 1) & 0xFFF;
             rsLoad(mRs1, Op, mem);
             break;
         case 6:
