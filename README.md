@@ -8,13 +8,13 @@ Written by Buzz Pendarvis
 
 Create a directory and execute `cmake ..` and then `make` to compile. 
 
-An executable called `basm` will be created 
+An executable called `bemu` will be created 
 
 Programmed for linux, untested on windows.
 
 # Use
 
-Execute `basm -h` for help. 
+Execute `bemu -h` for help. 
 
 ```
 Usage: emulator [Options] [File]
